@@ -151,24 +151,18 @@ static void searchRecord(int i) {
 }
 
 static int searchRecord() {
-    int i, n, f = 0;
+    int i;
     cout << "Enter ID no." << endl;
     cin >> i;
     for (int j = 0; j < no_of_records; j++) {
         if (table[j].getID() == i) {
-            n = j;
-            f++;
+            return j;
         }
     }
-    if (f == 0) {
-        return -1;
-    }
-    else {
-        return n;
-    }
+    return -1;
 }
 
-static void intializeRecords() {
+static void initializeRecords() {
     if (loadRecords(tabledata) && no_of_records > 0) {
         cout << "Loaded " << no_of_records << " records from " << tabledata << endl;
         return;
@@ -299,7 +293,7 @@ static bool deleteFile() {
 }
 
 int main() {
-    intializeRecords();
+    initializeRecords();
     start:
     cout << "Press 1 for adding records" << endl;
     cout << "Press 2 for searching records" << endl;
