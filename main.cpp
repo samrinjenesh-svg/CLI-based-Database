@@ -132,7 +132,7 @@ static void searchRecord(int i) {
     }
     else if (i == 3) {
         int f = 0, a;
-        cout << "Enter name: ";
+        cout << "Enter Age: ";
         cin >> a;
         for (int j = 0; j < no_of_records; j++) {
             if (table[j].getAge() == a) {
